@@ -23,4 +23,21 @@ class DefaultController extends Controller
 		$this->show('default/publier');
 	}
 
+	public function privateHome() {
+		// Récupére l'utilisateur connecté
+		$user = $this->getUser();
+		// debug($user);
+		// useless à part pour envoyer $email à la vue
+		$email = $user['email'];
+		$this->show('default/home', ['email' => $email]);
+	}
+
+	public function backoffice() {
+		// Limite l'accès aux users ayant le role admin
+		$this->allowTo('admin');
+		// $this->allowTo(['admin', 'member']); -> pour autoriser plusieurs rôles
+
+		echo 'Backoffice';
+	}
+
 }

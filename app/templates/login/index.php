@@ -15,30 +15,17 @@
         </div> <!-- div col-md-4 -->
 
 
-        <?php if(isset($_SESSION['message'])): ?>
-          <div class="alert alert-info">
-            <p><?php echo $_SESSION['message']; ?></p>
-            <?php unset($_SESSION['message']); ?>
-          </div>
-        <?php endif; ?>
-
+      
         <div class="col-md-6">
 
-
-          <!-- Affiche les erreurs stockés en session avec la clé loginErrors -->
-          <?php if(isset($_SESSION['loginErrors'])): ?>
+          <?php if(isset($errors['login'])): ?>
             <div class="alert alert-danger">
-              <?php foreach ($_SESSION['loginErrors'] as $keyError => $error): ?>
-                <p><?php echo $error; ?></p>
-              <?php endforeach; ?>
+              <p><?= $errors['login'] ?></p>
             </div>
-            <!-- Supprime les erreurs après les avoir affiché 1 fois -->
-            <?php unset($_SESSION['loginErrors']); ?>
           <?php endif; ?>
+       
+          <form class="form-container" method="POST" action="<?= $this->url('loginUser'); ?>">
 
-
-          <!-- Copié de bootstrap : http://getbootstrap.com/css/#forms -->
-          <form method="POST" action="loginHandler.php"> <!-- formulaire de login -->
             <div class="form-group">
                     <label for="email">Adresse électronique</label>
                     <input type="text" class="form-control" id="email" name="email" placeholder="Email">
