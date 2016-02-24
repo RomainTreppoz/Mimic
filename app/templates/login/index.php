@@ -3,7 +3,6 @@
 <?php $this->start('main_content') ?> 
 <div class="container-fluid">
 
-  <form method="POST" action="<?= $this->url('publierPost'); ?>">
 
     <div class="row">
 

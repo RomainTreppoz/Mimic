@@ -51,6 +51,7 @@ class LoginController extends Controller
 		}
 
 		$this->show('login/index', ['errors' => $errors]);
+		
 	}
 
 	public function logout() {
