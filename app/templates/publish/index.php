@@ -2,7 +2,7 @@
 
 <?php $this->start('main_content') ?> 
 <div class="container-fluid">
-  <form method="POST" action="<?= $this->url('publierPost'); ?>">
+  <form method="POST"  enctype="multipart/form-data" action="<?= $this->url('publierPost'); ?>">
     <div class="row">
 
       <div class="col-md-12" id="mainBoxFaire">
