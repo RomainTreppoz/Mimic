@@ -1,5 +1,6 @@
 .mimic {
     border: 1px solid #000;
+    border-radius: 10px;
     display: block;
     margin-left: auto;
     margin-right: auto
@@ -24,48 +25,49 @@
          url('../fonts/banksia-webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
     }
 
-  body{  background-image: url('../img/testfinish.jpg');
-         background-attachment: fixed;   
-             }
+body{   background-image: url('../img/testfinish.jpg');
+        background-attachment: fixed;   
+    }
+
 html, body {
 
-            font-family: banksia,Arial,Comic;
-            color: white;
-            
-            height: 100%;
-            width: 100%;
-        } 
+        font-family: banksia,Arial,Comic;
+        color: white;
+           
+        height: 100%;
+        width: 100%;
+    } 
 
-        #nav {
-            color:#fff;
-            background: black;
-            height: 100%;
-            padding: 20px;
-            position: fixed;
-            width: 220px;
-        }
-        #main {
-            margin-left: 220px;
-            width: auto;
-        }
+#nav {
+    color:#fff;
+    background: black;
+    height: 100%;
+    padding: 20px;
+    position: fixed;
+    width: 220px;
+}
 
-        #nav button.btn {
-            width: 100%;
-            position: relative;
-        }
-        .strip-img {
-            padding: 10px;
-        }
-        .strip-img img {
-            width: 100%;
-        }
+#main {
+    margin-left: 220px;
+    width: auto;
+}
 
+#nav button.btn {
+    width: 100%;
+    position: relative;
+}
 
-  textarea {
+.strip-img {
+    padding: 10px;
+}
+
+.strip-img img {
+    width: 100%;
+}
+
+textarea {
     resize:none;
-  }
-
-
+}
 
 .absoluteIcon {
     position: absolute;
@@ -73,15 +75,9 @@ html, body {
     top:8px;
 }
 
-
-
-
-
 #mainBoxFaire { 
-margin-top:4%; 
+    margin-top:4%; 
 }
-
-
 
 #titleMain {
     text-align: center;
@@ -105,4 +101,12 @@ margin-top:4%;
     float: right;    
     margin-top: 3%;
     margin-left:2%;
+}
+
+.espaceInput {
+margin-bottom: 6%;
+}
+
+#positionFormLogin {
+    padding-top: 20%;
 }

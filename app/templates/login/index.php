@@ -23,16 +23,14 @@
             </div>
           <?php endif; ?>
        
-          <form class="form-container" method="POST" action="<?= $this->url('loginUser'); ?>">
+          <form class="form-container" id="positionFormLogin" method="POST" action="<?= $this->url('loginUser'); ?>">
 
             <div class="form-group">
-                    <label for="email">Adresse électronique</label>
-                    <input type="text" class="form-control" id="email" name="email" placeholder="Email">
+                    <input type="text" class="form-control espaceInput" id="email" name="email" placeholder="Adresse électronique">
                   </div>
 
                   <div class="form-group">
-                    <label for="password">Mot de passe</label>
-                    <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                    <input type="password" class="form-control espaceInput" id="password" name="password" placeholder="Mot de passe">
                   </div>
 
                   <div class="form-group">

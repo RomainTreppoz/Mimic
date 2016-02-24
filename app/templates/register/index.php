@@ -13,13 +13,12 @@
           <img src="<?= $this->assetUrl("img/006_Joie.jpg")?>"class="mimic img-responsive" name="texte1" alt="mimique de joie">
         </div> <!-- div col-md-4 -->
        
-        <div class="col-md-6">
+        <div class="col-md-6 ">
 
-        <form class="form-container" method="POST" action="<?= $this->url('registerUser'); ?>"> 
+        <form class="form-container" id="positionFormLogin" method="POST" action="<?= $this->url('registerUser'); ?>"> 
           <div class="form-group <?php if(isset($errors['email'])) echo 'has-error' ?>">
 
-            <label for="email">Adresse électronique</label>
-            <input type="text" class="form-control" id="email" name="email" value="<?php if(isset($email)) echo $email; ?>" placeholder="Email">
+            <input type="text" class="form-control espaceInput" id="email" name="email" value="<?php if(isset($email)) echo $email; ?>" placeholder="Adresse électronique">
             <?php if(isset($errors['email'])): ?>
               <span class="help-block"><?= $errors['email']; ?></span>
             <?php endif; ?>
@@ -29,13 +28,11 @@
           </div>
 
           <div class="form-group <?php if(isset($errors['password'])) echo 'has-error' ?>">
-            <label for="password">Mot de passe</label>
-            <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+            <input type="password" class="form-control espaceInput" id="password" name="password" placeholder="Mot de passe">
           </div>
 
           <div class="form-group">
-            <label for="passwordConfirm">Confirmer le mot de passe</label>
-            <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="Password">
+            <input type="password" class="form-control espaceInput" id="confirmPassword" name="confirmPassword" placeholder="Confirmez le mot de passe">
           </div>
 
           <button type="submit" class="btn btn-warning btn-lg" id="btnEnvoyer" name="action">
