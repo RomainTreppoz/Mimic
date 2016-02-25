@@ -50,7 +50,7 @@
           
           
           <!-- Moteur de recherche de STRIP en GET -->
-            <form id="search-form" method="GET" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+            <form id="search-form" method="GET" action="<?= $this->url('home'); ?>">
               <div class="form-group">
                 <label for="stripName">Rechercher un strip en fonction de son intitulé</label>
                 <input type="text" class="form-control" id="stripName" name="stripName" placeholder="Titre du Strip" />

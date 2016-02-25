@@ -1,33 +1,7 @@
 <?php $this->layout('layout', ['title' => 'Accueil']) ?>
 
-<?php $this->start('main_content');
+<?php $this->start('main_content'); ?>
 
-// ouvre la bdd, 
-require(__DIR__.'/config/connect.php');
-// TODO : revoir car bdd ouverte dans \config.db
-
-// Moteur de recherche en GET
-if(isset($_GET['stripName'])) {
-  $stripName = $_GET['stripName'];
-
-  $query = $pdo->prepare('SELECT * FROM strips WHERE titre LIKE ?');
-  $query->bindValue(1, '%'.$stripName.'%', PDO::PARAM_STR);
-  $query->execute();
-
-  $allStrips = $query->fetchAll();
-}
-
-else {
-
-  $query = $pdo->prepare('SELECT * FROM strips'); // Prépare la requête
-  $query->execute();
-  $allStrips = $query->fetchAll();
-}
-
-?>
-
-  <!--  Affiche la liste des strips dans un foreach -->
-    
   <div id="main">           
     <div class="container-fluid">
       <div class="row">

@@ -3,6 +3,7 @@
 namespace Controller;
 
 use \W\Controller\Controller;
+use \Manager\StripManager;
 
 class DefaultController extends Controller
 {
@@ -12,7 +13,9 @@ class DefaultController extends Controller
 	 */
 	public function home()
 	{
-		$this->show('default/home');
+		$stripManager = new StripManager();
+		$allStrips=$stripManager->findAll();
+		$this->show('default/home', ['allStrips'=>$allStrips]);
 	}
 
 	/**
