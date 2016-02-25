@@ -58,7 +58,7 @@
               </div>
             </form>
             <br><br>
-          		<a class="btn btn-danger glyphicon  largeurBtn" type="button" href="<?= $this->url('publier'); ?>"> <span class="glyphicon glyphicon-film absoluteIcon" aria-hidden="true"></span>Je veux le faire</a>
+          		<a class="btn btn-default glyphicon  largeurBtn" type="button" href="<?= $this->url('publier'); ?>"> <span class="glyphicon glyphicon-film absoluteIcon" aria-hidden="true"></span>Je veux le faire</a>
                 <br><br>
               <br><br>
               <br><br>
