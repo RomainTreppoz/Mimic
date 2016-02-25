@@ -1,24 +1,25 @@
 <?php $this->layout('layout', ['title' => 'Publier', 'nav'=>'publier']) ?>
 
 <?php $this->start('main_content') ?> 
+
 <div class="container-fluid">
 
-<div class="row">
-      <div class="col-md-4">
-        <div id="webcam">
-          <video width="320" height="320" autoplay></video>
-          <button id="snapBtn-1" class="btn btn-primary">Snap 1</button>
-          <button id="snapBtn-2" class="btn btn-primary">Snap 2</button>
-          <button id="snapBtn-3" class="btn btn-primary">Snap 3</button>
-        </div>
+  <div class="row">
+    <div class="col-md-4">
+      <div id="webcam">
+        <video width="320" height="320" autoplay></video>
+        <button id="snapBtn-1" class="btn btn-primary">Photo 1</button>
+        <button id="snapBtn-2" class="btn btn-primary">Photo 2</button>
+        <button id="snapBtn-3" class="btn btn-primary">Photo 3</button>
       </div>
     </div>
+  </div>
 
   <form method="POST"  enctype="multipart/form-data" action="<?= $this->url('publierPost'); ?>">
     <div class="row">
 
-      <div class="col-md-12" id="mainBoxFaire">
-        <h2 id="titleMain">Crée ta propre Story !</h2>
+     <!--  <div class="col-md-12" id="mainBoxFaire">
+        <h2 id="titleMain">Crée ta propre Story !</h2> -->
 
         <div>
           <?php if(isset($errors['image'])): ?>
@@ -26,62 +27,73 @@
           <?php endif; ?>
         </div>
         
+        <!--  TITRE -->
+        <div class="col-md-12">
+    
+          <div class="form-group  ">
+            <label for="exampleInputFile">Le titre</label>
+          </div>
 
+          <textarea class="form-control mimic" id="lol" name="texte1" maxlength="255" placeholder="J'écris mon titre ici"></textarea>
+
+        </div>  <!-- col-md-4 -->
+
+        <!--  IMAGE et TEXTE 1 -->
         <div class="col-md-4">
-        <canvas id="snapCanvas-1"></canvas>
+
+          <canvas id="snapCanvas-1"></canvas>
           <input id="snapPhotoData-1" name="snapPhotoData-1" type="hidden">
           
           <div class="form-group  ">
-            <label for="exampleInputFile">Première photo</label>
+            <label for="exampleInputFile">Première mimique</label>
           </div>
 
-          <!--  TEXTE 1 -->
-           <textarea class="form-control mimic" id="lol" rows="5" name="texte1" maxlength="255" placeholder="J'écris mon intro ici"></textarea>
+          <textarea class="form-control mimic" id="lol" rows="5" name="texte1" maxlength="255" placeholder="J'écris mon intro ici"></textarea>
 
-        </div>
+        </div>  <!-- col-md-4 -->
 
+
+        <!-- IMAGE et TEXTE 2 -->
         <div class="col-md-4">
-        <canvas id="snapCanvas-2"></canvas>
+          
+          <canvas id="snapCanvas-2"></canvas>
           <input id="snapPhotoData-2" name="snapPhotoData-2" type="hidden">
           
           <div class="form-group">
-            <label for="exampleInputFile">Deuxième photo</label>
-
+            <label for="exampleInputFile">Deuxième mimique</label>
           </div>
-          <!-- TEXTE 2 -->
+
           <textarea class="form-control mimic" rows="5"  id="lol"name="texte2" maxlength="255" placeholder="Et ici la 2e partie de l'histoire"></textarea>
 
-        </div>
+        </div> <!-- col-md-4 -->
 
+
+        <!-- IMAGE et TEXTE 3 -->
         <div class="col-md-4">
           <canvas id="snapCanvas-3"></canvas>
           <input id="snapPhotoData-3" name="snapPhotoData-3" type="hidden">
           
           <div class="form-group">
-            <label for="exampleInputFile">Troisième photo</label>
-            
+            <label for="exampleInputFile">Troisième mimique</label>    
           </div>
-          <!-- TEXTE 3 -->
 
-          <textarea class="form-control mimic" rows="5" id="lol" name="texte3" maxlength="255" placeholder="Et enfin la chute :D"></textarea>
-
+          <textarea class="form-control mimic" rows="5" id="lol" name="texte3" maxlength="255" placeholder="Et enfin la chute."></textarea>
 
           <button type="submit" class="btn btn-danger btn-lg" id="btnEnvoyer">
             <span class="glyphicon glyphicon-send"  aria-hidden="true"></span> Envoyer !
           </button>
-        </div>
 
-      
-
-        </div>
-
-      </div> <!-- col-md-11 -->
-
+        </div> <!-- col-md-4 -->
+     
+      </div> <!-- div class="col-md-12" id="mainBoxFaire" -->
 
     </div> <!-- row -->
 
   </form>
-</div> <!-- container-fluid -->
+
+</div> <!-- container-fluid" -->
+
+
 <script>
 navigator.getUserMedia = ( navigator.getUserMedia ||
                        navigator.webkitGetUserMedia ||
