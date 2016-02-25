@@ -47,7 +47,7 @@ class LoginController extends Controller
 			}
 		}
 		else {
-			$errors['login'] = "Cette adresse e-mail n'existe pas";
+			$errors['mail'] = "Cette adresse e-mail n'existe pas";
 		}
 
 		$this->show('login/index', ['errors' => $errors]);

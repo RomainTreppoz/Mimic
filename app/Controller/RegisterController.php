@@ -47,7 +47,7 @@ class RegisterController extends Controller
 			$errors['password'] = "Les mots de passe ne sont pas identiques";
 		}
 		elseif(strlen($password) <= 5) {
-			$errors['password'] = "Votre mot de passe doit faire au moins 6 caractères";
+			$errors['passwordB'] = "Votre mot de passe doit faire au moins 6 caractères";
 		}
 
 		// S'il n'y pas d'erreurs

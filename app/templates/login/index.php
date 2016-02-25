@@ -17,20 +17,22 @@
       
         <div class="col-md-6">
 
-          <?php if(isset($errors['login'])): ?>
-            <div class="alert alert-danger">
-              <p><?= $errors['login'] ?></p>
-            </div>
-          <?php endif; ?>
        
           <form class="form-container" id="positionFormLogin" method="POST" action="<?= $this->url('loginUser'); ?>">
-
-            <div class="form-group">
+         
+            <div class="form-group <?php if(isset($errors['password'])) echo 'has-error' ?>">
                     <input type="text" class="form-control espaceInput" id="email" name="email" placeholder="Adresse électronique">
+                    <?php if(isset($errors['mail'])): ?>
+                    <span   class="help-block"><p class="bg-danger msgErrorTaille"><?= $errors['mail']; ?><p></span>
+
+                    <?php endif; ?>
                   </div>
 
-                  <div class="form-group">
+                  <div class="form-group <?php if(isset($errors['password'])) echo 'has-error' ?>">
                     <input type="password" class="form-control espaceInput" id="password" name="password" placeholder="Mot de passe">
+                     <?php if(isset($errors['login'])): ?>
+                    <span   class="help-block"><p class="bg-danger msgErrorTaille"><?= $errors['login']; ?><p></span>
+                    <?php endif; ?>
                   </div>
 
                   <div class="form-group">

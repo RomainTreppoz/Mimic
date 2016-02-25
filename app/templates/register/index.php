@@ -20,22 +20,25 @@
 
             <input type="text" class="form-control espaceInput" id="email" name="email" value="<?php if(isset($email)) echo $email; ?>" placeholder="Adresse électronique">
             <?php if(isset($errors['email'])): ?>
-              <span class="help-block"><?= $errors['email']; ?></span>
-            <?php endif; ?>
-            <?php if(isset($errors['password'])): ?>
-              <span class="help-block"><?= $errors['password']; ?></span>
+              <span class="help-block"><p class="bg-danger msgErrorTaille"><?= $errors['email']; ?></p></span>
             <?php endif; ?>
           </div>
 
           <div class="form-group <?php if(isset($errors['password'])) echo 'has-error' ?>">
             <input type="password" class="form-control espaceInput" id="password" name="password" placeholder="Mot de passe">
+            <?php if(isset($errors['password'])): ?>
+              <span  class="help-block"><p class="bg-danger msgErrorTaille"><?= $errors['password']; ?></p></span>
+            <?php endif; ?>
           </div>
 
-          <div class="form-group">
+          <div class="form-group  <?php if(isset($errors['passwordB'])) echo 'has-error' ?>">
             <input type="password" class="form-control espaceInput" id="confirmPassword" name="confirmPassword" placeholder="Confirmez le mot de passe">
+             <?php if(isset($errors['passwordB'])): ?>
+              <span  class="help-block"><p class="bg-danger msgErrorTaille"><?= $errors['passwordB']; ?></p></span>
+            <?php endif; ?>
           </div>
 
-          <button type="submit" class="btn btn-warning btn-lg" id="btnEnvoyer" name="action">
+          <button type="submit" class="btn btn-warning btn-lg" id="btnEnvoyer msgErrorTaille" name="action">
             <span class="glyphicon glyphicon-log-in"  aria-hidden="true"></span>   OK
           </button>
 
