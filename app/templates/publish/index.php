@@ -19,15 +19,22 @@
 
       <div class="col-md-12" id="mainBoxFaire">
         <h2 id="titleMain">Crée ta propre Story !</h2>
-        <!-- = remplace le php echo -->
+
+        <div>
+          <?php if(isset($errors['image'])): ?>
+          <?= $errors['image'] ?>
+          <?php endif; ?>
+
+        </div>
+        
+
         <div class="col-md-4">
         <canvas id="snapCanvas-1"></canvas>
           <input id="snapPhotoData-1" name="snapPhotoData-1" type="hidden">
-          <img src="<?= $this->assetUrl("img/donne_ta_photo.jpg")?>"class="mimic img-responsive" name="texte1" alt="donne ta photo">
-
+          
           <div class="form-group  ">
             <label for="exampleInputFile">Première photo</label>
-            <input type="file" id="exampleInputFile" name="photo1">
+            
            
           </div>
           <!--  TEXTE 1 -->
@@ -37,12 +44,10 @@
         <div class="col-md-4">
         <canvas id="snapCanvas-2"></canvas>
           <input id="snapPhotoData-2" name="snapPhotoData-2" type="hidden">
-          <img src="<?= $this->assetUrl("img/donne_ta_photo.jpg")?>" class="mimic img-responsive" name="texte2" alt="donne ta photo">
-
+          
           <div class="form-group">
             <label for="exampleInputFile">Deuxième photo</label>
-            <input type="file" id="exampleInputFile" name="photo2">
-            
+
           </div>
           <!-- TEXTE 2 -->
           <textarea class="form-control mimic" rows="5"  id="lol"name="texte2" maxlength="255" placeholder="Et ici la 2e partie de l'histoire"></textarea>
@@ -51,11 +56,9 @@
         <div class="col-md-4">
         <canvas id="snapCanvas-3"></canvas>
           <input id="snapPhotoData-3" name="snapPhotoData-3" type="hidden">
-          <img src="<?= $this->assetUrl("img/donne_ta_photo.jpg")?>" class="mimic img-responsive" name="texte3" alt="donne ta photo">
-
+          
           <div class="form-group">
             <label for="exampleInputFile">Troisième photo</label>
-            <input type="file" id="exampleInputFile" name="photo3">
             
           </div>
           <!-- TEXTE 3 -->

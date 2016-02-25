@@ -12,7 +12,8 @@
          
         <div class="col-md-12">
         <!-- Affiche le titre -->
-          <h2> <?php echo $strip['titre']; ?> </h2>
+          <h2> <?php echo $strip['idstrips'] . " - " . $strip['titre']; ?> </h2>
+          <h5> <?php echo $strip['auteur']; ?> </h5>
 
           <!-- Affiche les images et leurs textes respectifs -->
           <div class="col-md-3">
