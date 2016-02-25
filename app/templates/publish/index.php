@@ -24,7 +24,6 @@
           <?php if(isset($errors['image'])): ?>
           <?= $errors['image'] ?>
           <?php endif; ?>
-
         </div>
         
 
@@ -34,13 +33,13 @@
           
           <div class="form-group  ">
             <label for="exampleInputFile">Première photo</label>
-            
-           
           </div>
+
           <!--  TEXTE 1 -->
            <textarea class="form-control mimic" id="lol" rows="5" name="texte1" maxlength="255" placeholder="J'écris mon intro ici"></textarea>
 
         </div>
+
         <div class="col-md-4">
         <canvas id="snapCanvas-2"></canvas>
           <input id="snapPhotoData-2" name="snapPhotoData-2" type="hidden">
@@ -53,8 +52,9 @@
           <textarea class="form-control mimic" rows="5"  id="lol"name="texte2" maxlength="255" placeholder="Et ici la 2e partie de l'histoire"></textarea>
 
         </div>
+
         <div class="col-md-4">
-        <canvas id="snapCanvas-3"></canvas>
+          <canvas id="snapCanvas-3"></canvas>
           <input id="snapPhotoData-3" name="snapPhotoData-3" type="hidden">
           
           <div class="form-group">
@@ -126,7 +126,6 @@ function insertData64(inputEl, data) {
 
 function cbSuccess(localMediaStream) {
 
-
   video.src = window.URL.createObjectURL(localMediaStream);
   video.addEventListener('canplay', function(e) {
     if(!streaming) {
@@ -172,13 +171,14 @@ function cbError(err) {
   console.log("The following error occured: " + err);
 }
 
-
 if(navigator.getUserMedia) {
   navigator.getUserMedia({video: true, audio: false}, cbSuccess, cbError);
 }
+
 else {
   console.log('getUserMedia not supported');
 }
-</script>
-<?php $this->stop('main_content') ?>
 
+</script>
+
+<?php $this->stop('main_content') ?>

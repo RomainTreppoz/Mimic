@@ -5,6 +5,7 @@ namespace Controller;
 use \W\Controller\Controller;
 use \Manager\StripManager;
 
+
 class DefaultController extends Controller
 {
 

@@ -3,6 +3,8 @@
 namespace Controller;
 
 use \W\Controller\Controller;
+use \Manager\StripManager;
+
 
 class PublishController extends Controller
 {
@@ -13,11 +15,18 @@ class PublishController extends Controller
 	 */
 	public function index()
 	{
+		// On teste si l'utilisateur est connecté
+		$this->allowTo('member');
+
 		$this->show('publish/index');
 	}
 
 	public function submit()
 	{
+		// On teste si l'utilisateur est connecté
+		$this->allowTo('member');
+
+		$titre = htmlentities(trim($_POST['titre']));
 		$texte1 = htmlentities(trim($_POST['texte1']));
 		$texte2 = htmlentities(trim($_POST['texte2']));
 		$texte3 = htmlentities(trim($_POST['texte3']));
@@ -63,7 +72,25 @@ class PublishController extends Controller
 
 
 			// j'insère en bdd s'il n'y a pas d'erreur
-			$_SESSION['message']="Votre stip a bien été enregistré";
+				$loggedUser = $this->getUser();
+
+				$stripManager = new StripManager();
+				$strip = $stripManager->insert([
+					'titre' => 'blabla',
+					'images1' => $tmpfname1.'.png',
+					'images2' => $tmpfname2.'.png',
+					'images3' => $tmpfname3.'.png',
+					'texte1' => $texte1,
+					'texte2' => $texte2,
+					'texte3' => $texte3,
+					'user_id' => $loggedUser['id'],
+					'nbre_like' => '1',
+
+				]);
+
+			/*public function insert(array $data, $stripTags = true);*/
+			/*$_SESSION['message']="Votre strip a bien été enregistré";*/
+			/*public function lastInsertId()*/
 			$this->redirectToRoute('home');
 		}
 		
