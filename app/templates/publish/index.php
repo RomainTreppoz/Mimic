@@ -14,12 +14,13 @@
     <!--  div de 4 colonnes pour vue caméra et boutons déclenchement photos -->
     <div class="col-md-4">
       <div id="webcam">
-        <video width="320" height="320" autoplay class="mimic"></video>
-        <br>
-        <div class="btnCenter center">
-          <button id="snapBtn-1" class="btn btn-primary">Photo 1</button>
-          <button id="snapBtn-2" class="btn btn-primary">Photo 2</button>
-          <button id="snapBtn-3" class="btn btn-primary">Photo 3</button>
+          <a href="#" title="Votre vue-caméra doit apparaitre ici. En cas de problème, consulter la rubrique d'aide">
+          <video width="320" height="320" autoplay class="mimic"></video>
+          </a><br>
+          <div class="btnCenter center">
+            <button id="snapBtn-1" class="btn btn-primary">Photo 1</button>
+            <button id="snapBtn-2" class="btn btn-primary">Photo 2</button>
+            <button id="snapBtn-3" class="btn btn-primary">Photo 3</button>
         </div>
       </div>
     </div>

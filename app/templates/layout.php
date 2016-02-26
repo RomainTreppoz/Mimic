@@ -58,7 +58,7 @@
               </div>
             </form>
             <br><br>
-          		<a class="btn btn-default glyphicon  largeurBtn" type="button" href="<?= $this->url('publier'); ?>"> <span class="glyphicon glyphicon-film absoluteIcon" aria-hidden="true"></span>Je veux le faire</a>
+          		<a class="btn btn-default glyphicon largeurBtn btn-danger" type="button" href="<?= $this->url('publier'); ?>"> <span class="glyphicon glyphicon-film absoluteIcon" aria-hidden="true"></span>Je veux le faire</a>
                 <br><br>
               <br><br>
               <br><br>
@@ -68,7 +68,7 @@
             	<a class="btn btn-success glyphicon  largeurBtn" type="button" href="<?= $this->url('merci'); ?>"> <span class="glyphicon glyphicon-book absoluteIcon" aria-hidden="true"></span>CGU</a>
   	     		<br><br>
           
-            	<a class="btn btn-success glyphicon  largeurBtn" type="button" href="<?= $this->url('merci'); ?>"> <span class="glyphicon glyphicon-pencil absoluteIcon" aria-hidden="true"></span>Contact</a>
+            	<a class="btn btn-success glyphicon  largeurBtn" type="button" href="mailto:contact@mimicstrips.com" target="_blank"> <span class="glyphicon glyphicon-pencil absoluteIcon" aria-hidden="true"></span>Contact</a>
 	          	<br><br>
 	           
 		      	<a class="btn btn-success glyphicon  largeurBtn" type="button" href="<?= $this->url('merci'); ?>"> <span class="glyphicon glyphicon-question-sign absoluteIcon" aria-hidden="true"></span>Aide</a>

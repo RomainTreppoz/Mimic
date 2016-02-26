@@ -38,7 +38,7 @@
             <?php endif; ?>
           </div>
 
-          <button type="submit" class="btn btn-warning btn-lg" id="btnEnvoyer msgErrorTaille" name="action">
+          <button type="submit" class="btn btn-warning btn-lg" id="btnEnvoyer" name="action">
             <span class="glyphicon glyphicon-log-in"  aria-hidden="true"></span>   OK
           </button>
 
