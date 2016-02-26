@@ -1,25 +1,31 @@
 <?php $this->layout('layout', ['title' => 'Publier', 'nav'=>'publier']) ?>
 
-<?php $this->start('main_content') ?> 
+<?php $this->start('main_content') ?>
+
 
 <div class="container-fluid">
 
   <div class="row">
+
+      <!--  div de 12 colonnes pour vue caméra et titre -->
+      <div class="col-md-12" id="mainBoxFaire">
+     <!--     <h2 id="titleMain">Crée ta propre Story !</h2> -->
+
+    <!--  div de 4 colonnes pour vue caméra et boutons déclenchement photos -->
     <div class="col-md-4">
       <div id="webcam">
-        <video width="320" height="320" autoplay></video>
-        <button id="snapBtn-1" class="btn btn-primary">Photo 1</button>
-        <button id="snapBtn-2" class="btn btn-primary">Photo 2</button>
-        <button id="snapBtn-3" class="btn btn-primary">Photo 3</button>
+        <video width="320" height="320" autoplay class="mimic"></video>
+        <br>
+        <div class="btnCenter center">
+          <button id="snapBtn-1" class="btn btn-primary">Photo 1</button>
+          <button id="snapBtn-2" class="btn btn-primary">Photo 2</button>
+          <button id="snapBtn-3" class="btn btn-primary">Photo 3</button>
+        </div>
       </div>
     </div>
-  </div>
 
   <form method="POST"  enctype="multipart/form-data" action="<?= $this->url('publierPost'); ?>">
-    <div class="row">
 
-     <!--  <div class="col-md-12" id="mainBoxFaire">
-        <h2 id="titleMain">Crée ta propre Story !</h2> -->
 
         <div>
           <?php if(isset($errors['image'])): ?>
@@ -27,24 +33,29 @@
           <?php endif; ?>
         </div>
         
-        <!--  TITRE -->
-        <div class="col-md-12">
+    <!--  div de 8 colonnes pour titre -->
+        <div class="col-md-8">
     
           <div class="form-group  ">
             <label for="exampleInputFile">Le titre</label>
           </div>
 
-          <textarea class="form-control mimic" id="lol" name="texte1" maxlength="255" placeholder="J'écris mon titre ici"></textarea>
+          <textarea class="form-control mimic" id="lol" name="texte1" maxlength="255" placeholder="J'écris ici le titre de mon strip, puis je fais mes 3 photos (obligatoires) et j'écris mes 3 textes (non obligatoires). Quand tout est bon, j'envoie."></textarea>
 
-        </div>  <!-- col-md-4 -->
+        </div>  <!-- col-md-8 -->
 
-        <!--  IMAGE et TEXTE 1 -->
+      </div> <!-- div class="col-md-12" id="mainBoxFaire" -->
+
+      <!--  div de 12 colonnes pour les 3 photos et leurs textes -->
+      <div class="col-md-12" id="mainBoxFaire">
+
+        <!--  Image et texte 1 -->
         <div class="col-md-4">
 
-          <canvas id="snapCanvas-1"></canvas>
+          <canvas id="snapCanvas-1" class="mimic"></canvas>
           <input id="snapPhotoData-1" name="snapPhotoData-1" type="hidden">
           
-          <div class="form-group  ">
+          <div class="form-group center">
             <label for="exampleInputFile">Première mimique</label>
           </div>
 
@@ -53,14 +64,14 @@
         </div>  <!-- col-md-4 -->
 
 
-        <!-- IMAGE et TEXTE 2 -->
+        <!-- Image et texte 2 -->
         <div class="col-md-4">
           
-          <canvas id="snapCanvas-2"></canvas>
+          <canvas id="snapCanvas-2" class="mimic"></canvas>
           <input id="snapPhotoData-2" name="snapPhotoData-2" type="hidden">
           
-          <div class="form-group">
-            <label for="exampleInputFile">Deuxième mimique</label>
+          <div class="form-group center">
+            <label for="labelInputFile">Deuxième mimique</label>
           </div>
 
           <textarea class="form-control mimic" rows="5"  id="lol"name="texte2" maxlength="255" placeholder="Et ici la 2e partie de l'histoire"></textarea>
@@ -68,12 +79,13 @@
         </div> <!-- col-md-4 -->
 
 
-        <!-- IMAGE et TEXTE 3 -->
+        <!-- Image et texte 3 -->
         <div class="col-md-4">
-          <canvas id="snapCanvas-3"></canvas>
+
+          <canvas id="snapCanvas-3" class="mimic"></canvas>
           <input id="snapPhotoData-3" name="snapPhotoData-3" type="hidden">
           
-          <div class="form-group">
+          <div class="form-group center">
             <label for="exampleInputFile">Troisième mimique</label>    
           </div>
 
@@ -84,8 +96,9 @@
           </button>
 
         </div> <!-- col-md-4 -->
+
      
-      </div> <!-- div class="col-md-12" id="mainBoxFaire" -->
+      </div> <!-- div class="col-md-12" photos et textes -->
 
     </div> <!-- row -->
 

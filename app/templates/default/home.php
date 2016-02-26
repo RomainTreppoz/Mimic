@@ -13,21 +13,22 @@
         <div class="col-md-12">
         <!-- Affiche le titre -->
           <h2> <?php echo $strip['idstrips'] . " - " . $strip['titre']; ?> </h2>
-          <h5> <?php echo $strip['auteur']; ?> </h5>
+          <!-- TO DO mettre le nom de l'auteur au lieu de l'user_id-->
+          <!-- <h5> <?php //echo $strip['user_id']; ?> </h5> -->
 
           <!-- Affiche les images et leurs textes respectifs -->
           <div class="col-md-3">
-            <img src=" <?= $this->assetUrl('img/'.$strip['image1'])?>" class="mimic img-responsive" alt="une première mimique">
+            <img src=" <?= $this->assetUrl('../../uploads/'.$strip['image1'])?>" class="mimic img-responsive" alt="une première mimique">
             <?php echo $strip['texte1']; ?>
           </div>
 
           <div class="col-md-3">
-            <img src=" <?= $this->assetUrl('img/'.$strip['image2'])?>" class="mimic img-responsive" alt="une deuxième mimique">
+            <img src=" <?= $this->assetUrl('../../uploads/'.$strip['image2'])?>" class="mimic img-responsive" alt="une deuxième mimique">
             <p> <?php echo $strip['texte2']; ?> </p>
           </div>
 
           <div class="col-md-3">
-            <img src=" <?= $this->assetUrl('img/'.$strip['image3'])?>" class="mimic img-responsive" alt="une troisième mimique">
+            <img src=" <?= $this->assetUrl('../../uploads/'.$strip['image3'])?>" class="mimic img-responsive" alt="une troisième mimique">
             <p> <?php echo $strip['texte3']; ?> </p>
           </div>
 

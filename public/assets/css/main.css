@@ -87,15 +87,24 @@ textarea {
 
 .largeurBtn {
     width: 180px;
-
 }
+
 #exampleInputFile {
     font-family: banksia;
 }
 
+.center {
+    text-align: center;
+}
 
 .btn {
     font-family: banksia,Arial;
+}
+
+.btnCenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #btnEnvoyer {
