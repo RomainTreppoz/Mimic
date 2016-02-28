@@ -16,11 +16,18 @@
         <div class="col-md-6 ">
 
         <form class="form-container" id="positionFormLogin" method="POST" action="<?= $this->url('registerUser'); ?>"> 
-          <div class="form-group <?php if(isset($errors['email'])) echo 'has-error' ?>">
 
+          <div class="form-group <?php if(isset($errors['email'])) echo 'has-error' ?>">
             <input type="text" class="form-control espaceInput" id="email" name="email" value="<?php if(isset($email)) echo $email; ?>" placeholder="Adresse électronique">
             <?php if(isset($errors['email'])): ?>
               <span class="help-block"><p class="bg-danger msgErrorTaille"><?= $errors['email']; ?></p></span>
+            <?php endif; ?>
+          </div>
+
+          <div class="form-group <?php if(isset($errors['userName'])) echo 'has-error' ?>">
+            <input type="text" class="form-control espaceInput" id="userName" name="userName" value="<?php if(isset($userName)) echo $userName; ?>" placeholder="Nom ou pseudo">
+            <?php if(isset($errors['userName'])): ?>
+              <span class="help-block"><p class="bg-danger msgErrorTaille"><?= $errors['userName']; ?></p></span>
             <?php endif; ?>
           </div>
 
@@ -52,4 +59,3 @@
 </div> <!-- container-fluid -->
 
 <?php $this->stop('main_content') ?>
-
