@@ -13,7 +13,7 @@
         <div class="col-md-12">
         <!-- Affiche le titre -->
           <h2> <?php echo $strip['idstrips'] . " - " . $strip['titre']; ?> </h2>
-          <!-- TO DO mettre le nom de l'auteur au lieu de l'user_id-->
+          <!-- TODO mettre le nom de l'auteur au lieu de son user_id-->
           <!-- <h5> <?php //echo $strip['user_id']; ?> </h5> -->
 
           <!-- Affiche les images et leurs textes respectifs -->
@@ -32,13 +32,14 @@
             <p> <?php echo $strip['texte3']; ?> </p>
           </div>
 
+          <!-- Affiche les actions possibles sur les strips (liker, réutiliser textes ou photos) -->
           <div class="col-md-3">
             <button type="button" class="btn btn-danger">
               <span class="glyphicon glyphicon-camera" aria-hidden="true"></span> Réutiliser les photos
             </button>
             <br><br>
             <button type="button" class=" btn btn-danger">
-              <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span> Réutiliser le texte 
+              <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span> Réutiliser les textes 
             </button>
             <br><br>
             <button type="button" class="btn btn-success">

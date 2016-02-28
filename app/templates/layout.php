@@ -44,39 +44,48 @@
 	        <a class="btn btn-primary glyphicon  largeurBtn" type="button" href="<?= $this->url('home'); ?>"> <span class="glyphicon glyphicon-arrow-up absoluteIcon" aria-hidden="true"></span>Les mieux notées</a>
 	        <br><br>
 
-            <a class="btn btn-primary glyphicon  largeurBtn" type="button" href="<?= $this->url('home'); ?>"> <span class="glyphicon glyphicon-random absoluteIcon" aria-hidden="true"></span>En Aléatoire</a>
+            <a class="btn btn-primary glyphicon  largeurBtn" type="button" href="<?= $this->url('home'); ?>"> <span class="glyphicon glyphicon-random absoluteIcon" aria-hidden="true"></span>Aléatoire</a>
           	<br><br>
            
           
           
-          <!-- Moteur de recherche de STRIP en GET -->
+          <!-- Recherches de strips-->
             <form id="search-form" method="GET" action="<?= $this->url('home'); ?>">
               <div class="form-group">
                 <label for="stripName">Rechercher un strip en fonction de son intitulé</label>
-                <input type="text" class="form-control" id="stripName" name="stripName" placeholder="Titre du Strip" />
+                <input type="text" class="form-control" id="stripName" name="stripName" placeholder="Titre du strip" />
                 <button type="submit" class="btn-primary" name="action" value="search">OK</button>
               </div>
             </form>
+
+            <form id="search-form" method="GET" action="<?= $this->url('home'); ?>">
+              <div class="form-group">
+                <label for="stripName">Rechercher un strip en fonction de son numéro</label>
+                <input type="text" class="form-control" id="idstrips" name="idstrips" placeholder="Numéro du strip" />
+                <button type="submit" class="btn-primary" name="action" value="search">OK</button>
+              </div>
+            </form>
+
             <br><br>
+
+          <!-- Publication de strips -->            
           		<a class="btn btn-default glyphicon largeurBtn btn-danger" type="button" href="<?= $this->url('publier'); ?>"> <span class="glyphicon glyphicon-film absoluteIcon" aria-hidden="true"></span>Je veux le faire</a>
-                <br><br>
               <br><br>
               <br><br>
+
+          <!-- Autres pages (CGU, Aide, Contact, Explications...) -->
+              <a class="btn btn-success glyphicon  largeurBtn" type="button" href="<?= $this->url('merci'); ?>"> <span class="glyphicon glyphicon-book absoluteIcon" aria-hidden="true"></span>CGU</a>
               <br><br>
-             
-         
-            	<a class="btn btn-success glyphicon  largeurBtn" type="button" href="<?= $this->url('merci'); ?>"> <span class="glyphicon glyphicon-book absoluteIcon" aria-hidden="true"></span>CGU</a>
-  	     		<br><br>
-          
-            	<a class="btn btn-success glyphicon  largeurBtn" type="button" href="mailto:contact@mimicstrips.com" target="_blank"> <span class="glyphicon glyphicon-pencil absoluteIcon" aria-hidden="true"></span>Contact</a>
-	          	<br><br>
-	           
-		      	<a class="btn btn-success glyphicon  largeurBtn" type="button" href="<?= $this->url('merci'); ?>"> <span class="glyphicon glyphicon-question-sign absoluteIcon" aria-hidden="true"></span>Aide</a>
-	         	<br><br> 
-	           
-	        	<a class="btn btn-success glyphicon  largeurBtn" type="button" href="<?= $this->url('merci'); ?>"> <span class="glyphicon glyphicon-heart absoluteIcon" aria-hidden="true"></span>Remerciements</a>
+
+              <a class="btn btn-success glyphicon  largeurBtn" type="button" href="mailto:contact@mimicstrips.com" target="_blank"> <span class="glyphicon glyphicon-pencil absoluteIcon" aria-hidden="true"></span>Contact</a>
+              <br><br>
+              
+              <a class="btn btn-success glyphicon  largeurBtn" type="button" href="<?= $this->url('merci'); ?>"> <span class="glyphicon glyphicon-question-sign absoluteIcon" aria-hidden="true"></span>Aide</a>
+              <br><br> 
+               
+              <a class="btn btn-success glyphicon  largeurBtn" type="button" href="<?= $this->url('merci'); ?>"> <span class="glyphicon glyphicon-heart absoluteIcon" aria-hidden="true"></span>Remerciements</a>
 	         
-        </div>
+        </div>  <!-- nav -->
 
 
            <!--  Affiche un message  -->

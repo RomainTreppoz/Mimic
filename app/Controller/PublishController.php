@@ -26,7 +26,7 @@ class PublishController extends Controller
 		// On teste si l'utilisateur est connecté
 		$this->allowTo('member');
 
-		$titre = htmlentities(trim($_POST['titre']));
+		/*$titre = htmlentities(trim($_POST['titre']));*/
 		$texte1 = htmlentities(trim($_POST['texte1']));
 		$texte2 = htmlentities(trim($_POST['texte2']));
 		$texte3 = htmlentities(trim($_POST['texte3']));
