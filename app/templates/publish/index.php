@@ -15,7 +15,7 @@
     <div class="col-md-4">
       <div id="webcam">
           <a href="#" title="Votre vue-caméra doit apparaitre ici. En cas de problème, consulter la rubrique d'aide">
-          <video width="320" height="320" autoplay class="mimic"></video>
+          <video width="320" height="320" autoplay class="mimic" alt="vue-caméra"></video>
           </a><br>
           <div class="btnCenter center">
             <button id="snapBtn-1" class="btn btn-primary">Photo 1</button>

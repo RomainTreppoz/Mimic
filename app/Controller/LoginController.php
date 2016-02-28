@@ -50,8 +50,7 @@ class LoginController extends Controller
 			$errors['mail'] = "Cette adresse e-mail n'existe pas";
 		}
 
-		$this->show('login/index', ['errors' => $errors]);
-		
+		$this->show('login/index', ['errors' => $errors]);		
 	}
 
 	public function logout() {

@@ -6,7 +6,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Mimic - <?= $this->e($title) ?></title>
+    <title>Mimicstrips - <?= $this->e($title) ?></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="<?= $this->assetUrl('/img/mimic.ico') ?>">
@@ -26,16 +26,23 @@
     <!-- Affichage barre de navigation -->
     <div id="nav">
 
-      <h2 class="has-success">Mimiques </h2>
+      <h2 class="has-success">Mimicstrips</h2>
 
-      <!-- Login / enregistrement -->
-      <?php if(isset($_SESSION['message'])) :?>
-        <a class="btn btn-warning glyphicon  largeurBtn" type="button" href="<?= $this->url('login'); ?>"> <span class="glyphicon glyphicon-log-in absoluteIcon" aria-hidden="true"></span>Se connecter</a>
-        <a class="btn btn-default btn-xs" type="button" href="<?= $this->url('register'); ?>"> Pas encore membre ?</a>
-      <?php else: ?>
-        <a class="btn btn-warning glyphicon  largeurBtn" type="button" href="<?= $this->url('logout'); ?>"> <span class="glyphicon glyphicon-log-out absoluteIcon" aria-hidden="true"></span>Se déconnecter</a>
+      <!-- Bloc Login / enregistrement -->
+      <?php if(isset($_SESSION['user']['username'])) :?>
+      
+        <!-- Une session est ouverte : on affiche le nom de l'utilisateur et on propose le logout -->
+        <a class="btn btn-warning glyphicon largeurBtn" type="button" href="<?= $this->url('logout'); ?>"> <span class="glyphicon glyphicon-log-out absoluteIcon" aria-hidden="true"></span>Se déconnecter</a>
         <!-- TODO: le clic sur le nom envoie dans l'espace privé -->
         <a class="btn btn-default btn-xs" type="texte"> <?php echo $_SESSION['user']['username']; ?> </a>
+
+      <?php else: ?>
+
+        <!-- pas de connexion : on propose de se connecter ou s'enregistrer -->
+        <a class="btn btn-warning glyphicon  largeurBtn" type="button" href="<?= $this->url('login'); ?>"> <span class="glyphicon glyphicon-log-in absoluteIcon" aria-hidden="true"></span>Se connecter</a>
+        <a class="btn btn-default btn-xs" type="button" href="<?= $this->url('register'); ?>"> Pas encore membre ?</a>
+
+      
       <?php endif; ?>
 
       <br><br>

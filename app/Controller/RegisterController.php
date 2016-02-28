@@ -18,7 +18,7 @@ class RegisterController extends Controller
 		$this->show('register/index');
 	}
 
-		public function registerUser()
+	public function registerUser()
 	{
 		//debug($_POST);
 
