@@ -1,20 +1,3 @@
-.mimic {
-    border: 1px solid #000;
-    border-radius: 10px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto
-  }
-
-.navigation {
-    border: 1px solid #000;
-    display: block;
-    margin-top: auto;
-    background-position: 10px 10px;
-    margin-top: 30px;
-    background-color: #eee;
-  }
-
 /*ajout EP pour responsive */
 @font-face {
     font-family: 'banksia';
@@ -23,21 +6,46 @@
          url('../fonts/banksia-webfont.woff') format('woff'), /* Modern Browsers */
          url('../fonts/banksia-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
          url('../fonts/banksia-webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
-    }
+}
 
-body{   background-image: url('../img/bordeau.jpg');
-        /*background-attachment: fixed;   */
-        background-repeat:repeat;     
-    }
+body{
+    background-image: url('../img/bordeau.jpg');
+    /*background-attachment: fixed;   */
+    background-repeat:repeat;     
+}
 
 html, body {
+    font-family: banksia,Arial,Comic;
+    color: white;
+    height: 100%;
+    width: 100%;
+} 
 
-        font-family: banksia,Arial,Comic;
-        color: white;
-           
-        height: 100%;
-        width: 100%;
-    } 
+textarea {
+    resize:none;
+}
+
+
+/* Les ID par ordre alpha */
+
+#btnEnvoyer {
+    float: right;    
+    margin-top: 3%;
+    margin-left:2%;
+}
+
+#exampleInputFile {
+    font-family: banksia;
+}
+
+#main {
+    margin-left: 220px;
+    width: auto;
+}
+
+#mainBoxFaire { 
+    margin-top:4%; 
+}
 
 #nav {
     color:#fff;
@@ -48,36 +56,13 @@ html, body {
     width: 220px;
 }
 
-#main {
-    margin-left: 220px;
-    width: auto;
-}
-
 #nav button.btn {
     width: 100%;
     position: relative;
 }
 
-.strip-img {
-    padding: 10px;
-}
-
-.strip-img img {
-    width: 100%;
-}
-
-textarea {
-    resize:none;
-}
-
-.absoluteIcon {
-    position: absolute;
-    left: 10px;
-    top:8px;
-}
-
-#mainBoxFaire { 
-    margin-top:4%; 
+#positionFormLogin {
+    padding-top: 10%;
 }
 
 #titleMain {
@@ -85,17 +70,16 @@ textarea {
     margin-bottom: 50px;
 }
 
-.largeurBtn {
-    width: 180px;
+
+/* Les classes par ordre alpha */
+
+
+.absoluteIcon {
+    position: absolute;
+    left: 10px;
+    top:8px;
 }
 
-#exampleInputFile {
-    font-family: banksia;
-}
-
-.center {
-    text-align: center;
-}
 
 .btn {
     font-family: banksia,Arial;
@@ -107,24 +91,47 @@ textarea {
     margin-right: auto;
 }
 
-#btnEnvoyer {
-    float: right;    
-    margin-top: 3%;
-    margin-left:2%;
+.center {
+    text-align: center;
 }
 
 .espaceInput {
 margin-top: 6%;
 }
 
-#positionFormLogin {
-    padding-top: 10%;
+.img-larg-90 {
+width: 90%;
+}
+
+.largeurBtn {
+    width: 180px;
+}
+
+.mimic {
+    border: 1px solid #000;
+    border-radius: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto
 }
 
 .msgErrorTaille {
     width: 40%;    
 }
 
-.img-larg-90 {
-width: 90%;
+.navigation {
+    border: 1px solid #000;
+    display: block;
+    margin-top: auto;
+    background-position: 10px 10px;
+    margin-top: 30px;
+    background-color: #eee;
+}
+
+.strip-img {
+    padding: 10px;
+}
+
+.strip-img img {
+    width: 100%;
 }
