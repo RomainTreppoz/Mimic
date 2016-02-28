@@ -24,8 +24,10 @@ class RegisterController extends Controller
 
 		// Affecter une variable à chaque valeur clé de $_POST
 		$email = trim(htmlentities($_POST['email']));
+		$userName = trim(htmlentities($_POST['userName']));
 		$password = trim(htmlentities($_POST['password']));
 		$confirmPassword = trim(htmlentities($_POST['confirmPassword']));
+
 
 		// Initialisation d'un tableau d'erreurs (associatif)
 		$errors = [];
@@ -36,10 +38,15 @@ class RegisterController extends Controller
 
 		// Check de l'email
 		if(empty($email) || (filter_var($email, FILTER_VALIDATE_EMAIL)) === false) {
-			$errors['email'] = "Vérifiez votre adresse e-mail.";
+			$errors['email'] = "Vérifiez votre adresse électronique.";
 		}
 		elseif($userManager->emailExists($email)) { // Check en bdd que l'email existe
-			$errors['email'] = "Cette adresse e-mail existe déjà";
+			$errors['email'] = "Cette adresse électronique existe déjà";
+		}
+
+		// Check de l'username
+		if(empty($userName)) {
+			$errors['userName'] = "Un pseudo, ou même un vrai nom, est nécessaire pour publier des mimicstrips.";
 		}
 
 		// Check du password
@@ -61,6 +68,7 @@ class RegisterController extends Controller
 			// Enregistrement en bdd et renvoie un tableau
 			$resultUser = $userManager->insert([
 				'email' => $email,
+				'username' => $userName,
 				'password' => $hashedPassword,
 				'role' => 'member',
 				'created_at' => $date->format('Y-m-d H:i:s'),
@@ -76,14 +84,13 @@ class RegisterController extends Controller
 				$authentificationManager->logUserIn($resultUser);
 
 				// Redirection
-				$this->redirectToRoute('privateHome');
+				$this->redirectToRoute('home');
 			}
 
 		}
 		else {
-			$this->show('register/index', ['errors' => $errors, 'email' => $email]);
+			$this->show('register/index', ['errors' => $errors, 'email' => $email, 'username' => $userName]);
 		}
-
 
 	}
 
