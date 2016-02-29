@@ -26,7 +26,7 @@ class PublishController extends Controller
 		// On teste si l'utilisateur est connecté
 		$this->allowTo('member');
 
-		/*$titre = htmlentities(trim($_POST['titre']));*/
+		$titre = htmlentities(trim($_POST['titre']));
 		$texte1 = htmlentities(trim($_POST['texte1']));
 		$texte2 = htmlentities(trim($_POST['texte2']));
 		$texte3 = htmlentities(trim($_POST['texte3']));
@@ -35,6 +35,11 @@ class PublishController extends Controller
 		$image3 = htmlentities(trim($_POST['snapPhotoData-3']));
 
 		$errors=[];
+
+		if (empty($titre)) {
+			$errors['titre']="Il faut donner un titre à cette histoire";
+			$this->show('publish/index', ['errors' => $errors]);
+		}
 
 		if (empty($image1) || empty($image2) || empty($image3)) {
 			$errors['image']="Toutes les images sont obligatoires";
@@ -76,7 +81,7 @@ class PublishController extends Controller
 
 				$stripManager = new StripManager();
 				$strip = $stripManager->insert([
-					'titre' => 'blabla',
+					'titre' => $titre,
 					'images1' => $tmpfname1.'.png',
 					'images2' => $tmpfname2.'.png',
 					'images3' => $tmpfname3.'.png',
@@ -87,6 +92,8 @@ class PublishController extends Controller
 					'nbre_like' => '1',
 
 				]);
+
+			debug($stripManager);
 
 			/*public function insert(array $data, $stripTags = true);*/
 			/*$_SESSION['message']="Votre strip a bien été enregistré";*/

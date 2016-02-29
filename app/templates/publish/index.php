@@ -14,7 +14,7 @@
     <!--  div de 4 colonnes pour vue caméra et boutons déclenchement photos -->
     <div class="col-md-4">
       <div id="webcam">
-          <a href="#" title="Votre vue-caméra doit apparaitre ici. En cas de problème, consulter la rubrique d'aide">
+          <a href="#" title="Votre vue-caméra doit apparaitre ici. En cas de problème, consultez la rubrique d'aide">
           <video width="320" height="320" autoplay class="mimic" alt="vue-caméra"></video>
           </a><br>
           <div class="btnCenter center">
@@ -26,7 +26,6 @@
     </div>
 
   <form method="POST"  enctype="multipart/form-data" action="<?= $this->url('publierPost'); ?>">
-
 
         <div>
           <?php if(isset($errors['image'])): ?>
@@ -41,7 +40,7 @@
             <label for="exampleInputFile">Le titre</label>
           </div>
 
-          <textarea class="form-control mimic" id="lol" name="texte1" maxlength="255" placeholder="J'écris ici le titre de mon strip, puis je fais mes 3 photos (obligatoires) et j'écris mes 3 textes (non obligatoires). Quand tout est bon, j'envoie."></textarea>
+          <textarea class="form-control mimic" id="lol" name="titre" maxlength="255" placeholder="J'écris ici le titre de mon strip, puis je fais mes 3 photos (obligatoires) et j'écris mes 3 textes (non obligatoires). Quand tout est bon, j'envoie."></textarea>
 
         </div>  <!-- col-md-8 -->
 

@@ -58,21 +58,8 @@
       <br><br>
     
 
-    <div class="has-success">
-      <?php if(isset($_SESSION['message'])) :?>
-          <?= $_SESSION['message']; ?>
-          <?php unset($_SESSION['message']); ?>
-        <?php endif; ?>
-    </div>
 
-
-
-
-
-
-
-
-      
+     
       <!-- Recherches de strips-->
       <form id="search-form" method="GET" action="<?= $this->url('home'); ?>">
         <div class="form-group">
@@ -108,14 +95,17 @@
       
     </div>  <!-- nav -->
 
-
-
-
-
-
+  <div id="main">           
 
          <!--  Affiche un message  --> 
-  <div id="main">           
+    <div class="has-success">
+      <?php if(isset($_SESSION['message'])) :?>
+          <?= $_SESSION['message']; ?>
+          <?php unset($_SESSION['message']); ?>
+        <?php endif; ?>
+    </div>
+
+
    <!--  <div class="container-fluid"> -->
       <div class="has-success">
         <?php if(isset($_SESSION['message'])) :?>
@@ -127,8 +117,6 @@
       <?= $this->section('main_content') ?>
     <!-- </div>  --><!-- /container-fluid -->
   </div> <!-- /main -->
-
-
 
     
     <footer>  
