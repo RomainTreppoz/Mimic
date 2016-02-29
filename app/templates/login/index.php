@@ -40,9 +40,10 @@
 
             </div>
 
-
+            <!-- L'utilisateur ne peut se connecter : on lui propose des alternatives -->
             <div class="form-group">
               <p class="btn btn-default btn-xs"><a href="forgotPassword.php">Mot de passe oublié ?</a></p>
+              <a class="btn btn-default btn-xs" type="button" href="<?= $this->url('register'); ?>"> Pas encore membre ?</a>
             </div>
 
             <button type="submit" class="btn btn-warning btn-lg" id="btnEnvoyer" name="action">
