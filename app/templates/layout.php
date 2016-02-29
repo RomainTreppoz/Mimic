@@ -48,18 +48,21 @@
       <br><br>
 
 
-      <!-- Choix du mode d'affichage des strips-->          
-      <a class="btn btn-primary glyphicon  largeurBtn" type="button" href="<?= $this->url('home'); ?>"> <span class="glyphicon glyphicon-time absoluteIcon" aria-hidden="true"></span>Les plus récentes</a>
+      <!-- Choix du mode d'affichage des strips-->
+
+      <a class="btn btn-primary glyphicon largeurBtn" type="button" method="GET" sort="date" href="<?= $this->url('home'); ?>">
+      <span class="glyphicon glyphicon-time absoluteIcon" aria-hidden="true"></span>Les plus récentes</a>
       <br><br>
                 
-      <a class="btn btn-primary glyphicon  largeurBtn" type="button" href="<?= $this->url('home'); ?>"> <span class="glyphicon glyphicon-arrow-up absoluteIcon" aria-hidden="true"></span>Les mieux notées</a>
+      <a class="btn btn-primary glyphicon largeurBtn" type="button" method="GET" sort="likes" href="<?= $this->url('home'); ?>">
+      <span class="glyphicon glyphicon-arrow-up absoluteIcon" aria-hidden="true"></span>Les mieux notées</a>
       <br><br>
-      <a class="btn btn-primary glyphicon  largeurBtn" type="button" href="<?= $this->url('home'); ?>"> <span class="glyphicon glyphicon-random absoluteIcon" aria-hidden="true"></span>Aléatoire</a>
+      
+      <a class="btn btn-primary glyphicon largeurBtn" type="button" href="<?= $this->url('home'); ?>">
+      <span class="glyphicon glyphicon-random absoluteIcon" aria-hidden="true"></span>Aléatoire</a>
       <br><br>
     
-
-
-     
+  
       <!-- Recherches de strips-->
       <form id="search-form" method="GET" action="<?= $this->url('home'); ?>">
         <div class="form-group">

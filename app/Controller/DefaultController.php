@@ -15,9 +15,27 @@ class DefaultController extends Controller
 	public function home()
 	{
 		$stripManager = new StripManager();
+
+		echo $_GET['sort'];
+		die();
+		$choixAffichage=$_GET['sort'];
+
+
+		if ($choixAffichage = 'd' ) {
+		/* Affichage par ordre de popularité décroissante */
+		$allStrips=$stripManager->findAll('nbre_like', 'DESC');
+		}
+
+		else {
+		/* Affichage par ordre chronologique inverse */
 		$allStrips=$stripManager->findAll('date_creation', 'DESC');
+		}
+
 		$this->show('default/home', ['allStrips'=>$allStrips]);
+
 	}
+
+
 
 	/**
 	 * Page d'accueil par défaut
