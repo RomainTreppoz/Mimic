@@ -4,6 +4,7 @@ namespace Controller;
 
 use \W\Controller\Controller;
 use \Manager\StripManager;
+use \DateTime;
 
 
 class PublishController extends Controller
@@ -54,7 +55,7 @@ class PublishController extends Controller
 
 				/* On génère un nom aléatoire pour l'image 1 */
 				$tmpfname1 = tempnam(__DIR__.'/../../uploads/', "");
-				file_put_contents($tmpfname1.'.png', $data);
+				file_put_contents(str_replace(".tmp", "", $tmpfname1).'.png', $data);
 
 			/* Image2 */
 
@@ -64,7 +65,7 @@ class PublishController extends Controller
 
 				/* On génère un nom aléatoire pour l'image 2 */
 				$tmpfname2 = tempnam(__DIR__.'/../../uploads/', "");
-				file_put_contents($tmpfname2.'.png', $data);
+				file_put_contents(str_replace(".tmp", "", $tmpfname2).'.png', $data);
 
 			/* Image3 */
 			list($type, $data) = explode(';', $image3);
@@ -73,7 +74,11 @@ class PublishController extends Controller
 
 				/* On génère un nom aléatoire pour l'image 3 */
 				$tmpfname3 = tempnam(__DIR__.'/../../uploads/', "");
-				file_put_contents($tmpfname3.'.png', $data);			
+				file_put_contents(str_replace(".tmp", "", $tmpfname3).'.png', $data);			
+
+
+			// Objet DateTime
+			$date = new DateTime();
 
 
 			// j'insère en bdd s'il n'y a pas d'erreur
@@ -82,18 +87,19 @@ class PublishController extends Controller
 				$stripManager = new StripManager();
 				$strip = $stripManager->insert([
 					'titre' => $titre,
-					'images1' => $tmpfname1.'.png',
-					'images2' => $tmpfname2.'.png',
-					'images3' => $tmpfname3.'.png',
+					'image1' => str_replace(".tmp", "", basename($tmpfname1.'.png')),
+					'image2' => str_replace(".tmp", "", basename($tmpfname2.'.png')),
+					'image3' => str_replace(".tmp", "", basename($tmpfname3.'.png')),
 					'texte1' => $texte1,
 					'texte2' => $texte2,
 					'texte3' => $texte3,
 					'user_id' => $loggedUser['id'],
 					'nbre_like' => '1',
-
+					'date_creation' => $date->format('Y-m-d H:i:s')
 				]);
 
-			debug($stripManager);
+			/*debug($stripManager);
+			die();*/
 
 			/*public function insert(array $data, $stripTags = true);*/
 			/*$_SESSION['message']="Votre strip a bien été enregistré";*/

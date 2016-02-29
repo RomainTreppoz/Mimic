@@ -15,7 +15,7 @@ class DefaultController extends Controller
 	public function home()
 	{
 		$stripManager = new StripManager();
-		$allStrips=$stripManager->findAll();
+		$allStrips=$stripManager->findAll('date_creation', 'DESC');
 		$this->show('default/home', ['allStrips'=>$allStrips]);
 	}
 
