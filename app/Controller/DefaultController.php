@@ -16,20 +16,23 @@ class DefaultController extends Controller
 	{
 		$stripManager = new StripManager();
 
-		echo $_GET['sort'];
-		die();
-		$choixAffichage=$_GET['sort'];
+		/*Récupération de l'ordre de tri passé en GET*/
+		/*echo $_GET['sort'];
+		die();*/
+		
+		/*$choixAffichage=$_GET['sort'];*/
 
 
-		if ($choixAffichage = 'd' ) {
+		if ($choixAffichage = 'likes' ) {
 		/* Affichage par ordre de popularité décroissante */
 		$allStrips=$stripManager->findAll('nbre_like', 'DESC');
 		}
 
 		else {
-		/* Affichage par ordre chronologique inverse */
-		$allStrips=$stripManager->findAll('date_creation', 'DESC');
 		}
+		
+		/* Affichage par défaut par ordre chronologique inverse */
+		$allStrips=$stripManager->findAll('date_creation', 'DESC');
 
 		$this->show('default/home', ['allStrips'=>$allStrips]);
 

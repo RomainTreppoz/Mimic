@@ -5,6 +5,9 @@
 
 		
 		['GET', '/merci', 'Thanks#index', 'merci'],
+		['GET', '/cgu', 'Cgu#index', 'cgu'],
+		['GET', '/aide', 'Help#index', 'help'],
+		['GET', '/help', 'Help#index', 'help2'],
 
 		
 		['GET', '/publier', 'Publish#index', 'publier'],
@@ -29,8 +32,9 @@
 
 		['POST', '/registerUser', 'Register#registerUser', 'registerUser'],
 
-
 		['GET', '/private', 'Default#privateHome', 'privateHome'],
 		['GET', '/bo', 'Default#backoffice', 'bo'],
+
+
 
 	);

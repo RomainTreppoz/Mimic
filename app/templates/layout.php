@@ -50,11 +50,11 @@
 
       <!-- Choix du mode d'affichage des strips-->
 
-      <a class="btn btn-primary glyphicon largeurBtn" type="button" method="GET" sort="date" href="<?= $this->url('home'); ?>">
+      <a class="btn btn-primary glyphicon largeurBtn" type="button" method="GET" href="<?= $this->url('home') ; ?>">
       <span class="glyphicon glyphicon-time absoluteIcon" aria-hidden="true"></span>Les plus récentes</a>
       <br><br>
                 
-      <a class="btn btn-primary glyphicon largeurBtn" type="button" method="GET" sort="likes" href="<?= $this->url('home'); ?>">
+      <a class="btn btn-primary glyphicon largeurBtn" type="button" method="GET" sort="likes" href="<?= $this->url('home') ; ?>">
       <span class="glyphicon glyphicon-arrow-up absoluteIcon" aria-hidden="true"></span>Les mieux notées</a>
       <br><br>
       
@@ -86,15 +86,20 @@
           <br><br>
 
       <!-- Autres pages (CGU, Aide, Contact, Explications...) -->
-          <a class="btn btn-success glyphicon  largeurBtn" type="button" href="<?= $this->url('merci'); ?>"> <span class="glyphicon glyphicon-book absoluteIcon" aria-hidden="true"></span>CGU</a>
+          <a class="btn btn-success glyphicon  largeurBtn" type="button" href="<?= $this->url('cgu'); ?>">
+          <span class="glyphicon glyphicon-copyright-mark absoluteIcon" aria-hidden="true"></span>CGU</a>
           <br><br>
-          <a class="btn btn-success glyphicon  largeurBtn" type="button" href="mailto:contact@mimicstrips.com" target="_blank"> <span class="glyphicon glyphicon-pencil absoluteIcon" aria-hidden="true"></span>Contact</a>
+
+          <a class="btn btn-success glyphicon  largeurBtn" type="button" href="mailto:contact@mimicstrips.com" target="_blank">
+          <span class="glyphicon glyphicon-pencil absoluteIcon" aria-hidden="true"></span>Contact</a>
           <br><br>
           
-          <a class="btn btn-success glyphicon  largeurBtn" type="button" href="<?= $this->url('merci'); ?>"> <span class="glyphicon glyphicon-question-sign absoluteIcon" aria-hidden="true"></span>Aide</a>
+          <a class="btn btn-success glyphicon  largeurBtn" type="button" href="<?= $this->url('help'); ?>">
+          <span class="glyphicon glyphicon-question-sign absoluteIcon" aria-hidden="true"></span>Aide</a>
           <br><br> 
            
-          <a class="btn btn-success glyphicon  largeurBtn" type="button" href="<?= $this->url('merci'); ?>"> <span class="glyphicon glyphicon-heart absoluteIcon" aria-hidden="true"></span>Remerciements</a>
+          <a class="btn btn-success glyphicon  largeurBtn" type="button" href="<?= $this->url('merci'); ?>">
+          <span class="glyphicon glyphicon-flash absoluteIcon" aria-hidden="true"></span>Le projet</a>
       
     </div>  <!-- nav -->
 
