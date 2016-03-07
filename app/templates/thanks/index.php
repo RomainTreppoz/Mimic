@@ -31,7 +31,7 @@
         <h4>Il faut maintenant corriger certaines imperfections, améliorer son aspect et développer ce qui existe (les recherches, les tris, n'afficher que les nouveaux strips)</h4>
         <h4>Bientôt, vous pourrez intervenir sur les strips des autres : les "liker" pour permettre une visualisation en fonction de leur popularité mais aussi les reprendre à votre compte, les détourner.</h4>
         <h4>Mais, en fonction de l'accueil que vous réserverez à ce site, d'autres possibilités sont à explorer : le lien aux réseaux sociaux, le développement d'une partie privée pour réserver certaines publications à ses seuls contacts, l'utilisation depuis les téléphones, etc...</h4>
-        <h4>N'hésitez pas à nous faire part de vos idées en cliquant sur "Contact" !</h4>
+        <h4>N'hésitez pas à nous faire part de vos idées en cliquant sur "Contact"!</h4>
       
     </div> <!-- col-md-12 -->
   </div> <!-- row -->

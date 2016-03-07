@@ -10,7 +10,7 @@
         <h2 id="titleMain">Bienvenue, futur mimicstriper / euse !</h2>
 
         <div class="col-md-4">
-          <img src="<?= $this->assetUrl("img/006_Joie.jpg")?>"class="mimic img-responsive" name="texte1" alt="mimique de joie">
+          <img src="<?= $this->assetUrl("img/006_joie.jpg")?>"class="mimic img-responsive" name="texte1" alt="mimique de joie">
         </div> <!-- div col-md-4 -->
        
         <div class="col-md-6 ">

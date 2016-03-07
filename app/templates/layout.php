@@ -128,7 +128,7 @@
 
     
     <footer>  
-      <p>&copy; webforce3, mars 2016</p>
+      <p>&copy; Mimicstrips, mars 2016</p>
     </footer>
 
       <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
